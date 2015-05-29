@@ -2,37 +2,7 @@
     <head>
         <meta charset="utf-8" />
         <title>Admin Portal to Add Listings</title>
-        
-    </head>
-    <body>
-        <header>
-            <h2>Admin Portal to Add Listings</h2>
-           
-        </header>
-        <div class="container">
-                   <a href="#" id="upload_widget_opener">Upload image</a>
-
-<script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
-          
-<script type="text/javascript">  
-  document.getElementById("upload_widget_opener").addEventListener("click", function() {
-
-    cloudinary.openUploadWidget({ cloud_name: 'mesh', upload_preset: 'bjqltbqn'}, 
-      function(error, result) { console.log(error, result);
-			
-			alert("aa"+" "+result[0].url);
-		
-	  });
-
-  }, false);
-</script>
-                    </div>
-               
-     <!DOCTYPE html>
-<html>
-  <head>
-    <title>Place Autocomplete Address Form</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+         <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       html, body, #map-canvas {
@@ -161,9 +131,34 @@ function geolocate() {
         margin-bottom: 2px;
       }
     </style>
-  </head>
+    </head>
+     <body onload="initialize()">
+        <header>
+            <h2>Admin Portal to Add Listings</h2>
+           
+        </header>
+        <div class="container">
+                   <a href="#" id="upload_widget_opener">Upload image</a>
 
-  <body onload="initialize()">
+<script src="http://widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+          
+<script type="text/javascript">  
+  document.getElementById("upload_widget_opener").addEventListener("click", function() {
+
+    cloudinary.openUploadWidget({ cloud_name: 'mesh', upload_preset: 'bjqltbqn'}, 
+      function(error, result) { console.log(error, result);
+			
+			document.getElementById("imgurl").innerHTML=result[0].url;
+			
+	  });
+
+  }, false);
+</script>
+                    </div>
+               
+
+
+ 
     <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
@@ -210,6 +205,5 @@ function geolocate() {
 	</div>
   
   </body>
-</html>
-    </body>
+
 </html>
