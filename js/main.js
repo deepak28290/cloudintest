@@ -93,7 +93,7 @@ console.log(payload);
   
   if (xmlhttp.readyState==4 && xmlhttp.status==200)
     {
-		if(xmlhttp.responseText=="success"){
+	if(xmlhttp.responseText.indexOf("success") > -1){
 		//	alert("Thanks for your response. We'll get back to you over email right away!")
 			 swal("Win", "Details uploaded to the server successfully!", "success");
 		}
