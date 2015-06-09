@@ -6,6 +6,10 @@ function submit(){
 	var price1=document.getElementById('price1').value;
 	var price2=document.getElementById('price2').value;
 	var price3=document.getElementById('price3').value;
+	var period1=document.getElementById('period1').value;
+	var period2=document.getElementById('period2').value;
+	var period3=document.getElementById('period3').value;
+	var fulfillment=document.getElementById('fulfillment').value;
 	var security=document.getElementById('security').value;
 	var availability=document.getElementById('availability').value;
 	var merchant=document.getElementById('merchant').value;
@@ -29,6 +33,10 @@ function submit(){
 				payload["price1"]=price1;
 				payload["price2"]=price2;
 				payload["price3"]=price3;
+				payload["period1"]=period1;
+				payload["period2"]=period2;
+				payload["period3"]=period3;
+				payload["allowed_fulfillment"]=fulfillment;
 				payload["security_deposit"]=security;
 				payload["merchant_name"]=merchant;
 				payload["image_url"]=image_url;

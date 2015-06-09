@@ -193,13 +193,18 @@ function geolocate() {
       
     </div><br/><br/>
 	<div class="input-group">
-      <div class="input-group-addon">Minimum Rental Period Unit(a day/a week/a month)</div>
-      <input type="text" class="form-control" id="rentalduration" placeholder="ex: day/week/month">
+      <div class="input-group-addon">Rental Frequency(daily/weekly/monthly)</div>
+      <input type="text" class="form-control" id="rentalduration" placeholder="ex: daily">
       
     </div><br/><br/>
 	<div class="input-group">
       <div class="input-group-addon">Rental Price Basic(in Rs.)</div>
-      <input type="text" class="form-control" id="price1" placeholder=" ex price for 1 day or 1 week ">
+      <input type="text" class="form-control" id="price1" placeholder=" 500 ">
+      
+    </div><br/><br/>
+	<div class="input-group">
+      <div class="input-group-addon">Period for Price1(per)</div>
+      <input type="text" class="form-control" id="period1" placeholder="  day ">
       
     </div><br/><br/>
 	<div class="input-group">
@@ -208,8 +213,18 @@ function geolocate() {
       
     </div><br/><br/>
 	<div class="input-group">
+      <div class="input-group-addon">Period for Price2(per)</div>
+      <input type="text" class="form-control" id="period2" placeholder="  week ">
+      
+    </div><br/><br/>
+	<div class="input-group">
       <div class="input-group-addon">Third Rental Price (in Rs.)</div>
       <input type="text" class="form-control" id="price3" placeholder=" ex price for a monthly package ">
+      
+    </div><br/><br/>
+	<div class="input-group">
+      <div class="input-group-addon">Period for Price3(per)</div>
+      <input type="text" class="form-control" id="period3" placeholder="  month ">
       
     </div><br/><br/>
 	<div class="input-group">
@@ -222,6 +237,13 @@ function geolocate() {
       <input type="text" class="form-control" id="security" placeholder="5000">
       
     </div><br/>
+	
+	<div class="input-group">
+      <div class="input-group-addon">Supported Fulfillment mode (ex: Delivery or Pickup or Both)</div>
+      <input type="text" class="form-control" id="fulfillment" placeholder="pickup">
+      
+    </div><br/>
+	
 	<div class="input-group">
       <div class="input-group-addon">Merchant Name</div>
       <input type="text" class="form-control" id="merchant" placeholder="Zip Cars">
