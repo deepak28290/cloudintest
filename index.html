@@ -186,8 +186,13 @@ function geolocate() {
 							<li><a href="#">Laptops</a></li>
                         </ul>
 						</div><br/><br/>
-						
+						<div class="input-group">
+      <div class="input-group-addon">Unique ID(Car number / SKU code)</div>
+      <input type="text" class="form-control" id="uid" placeholder="ex: KA01AB1234">
+      
+    </div><br/><br/>	
 							<div class="input-group">
+							
       <div class="input-group-addon">Description</div>
        <textarea class="form-control" rows="5" id="description" placeholder="tell us about the item"></textarea>
       
@@ -227,7 +232,7 @@ function geolocate() {
       <input type="text" class="form-control" id="period3" placeholder="  month ">
       
     </div><br/><br/>
-	<div class="input-group">
+	<div class="input-group" style="display:none">
       <div class="input-group-addon">Product available till( Number of days/weeks/months)</div>
       <input type="text" class="form-control" id="availability" placeholder="next 7 days or 0 if always available">
       

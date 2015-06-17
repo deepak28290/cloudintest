@@ -22,11 +22,12 @@ function submit(){
 	var image_url=document.getElementById('imgurl').innerHTML;
 	var essentials=document.getElementById('essentials').value;
 	var wib=document.getElementById('box').value;
+	var uid=document.getElementById('uid').value;
 	
 	var category=document.getElementById("category").innerHTML;
 	
 	var payload={};
-	
+			
 				payload["title"]=title;
 				payload["description"]=description;
 				payload["category"]=category;
@@ -50,6 +51,7 @@ function submit(){
 				payload["inthebox"]=wib;
 				payload["rental_period_unit"]=rental_period_unit;
 				payload["availability"]=availability;
+				payload["uid"]=uid;
 				
 	var fields = $('#specstable tr:has(td)').map(function(i, v) {
     
@@ -70,12 +72,12 @@ for(var i=0; i < fields.length; i++) {
 var specs=jsonData;
 				payload["specs"]=specs;
 console.log(payload);
-	if(description==""||title==""||rental_period_unit==""||category==""||price1==""||price2==""||price3==""||security==""||availability==""||merchant==""||coordinates==""||address==""||city==""||pin==""||country==""||state==""||essentials==""||wib==""){
+	if(description==""||title==""||rental_period_unit==""||category==""||price1==""||price2==""||price3==""||security==""||merchant==""||coordinates==""||address==""||city==""||pin==""||country==""||state==""||essentials==""||wib==""||uid==""){
 	  
 	    swal("Oops...", "All fields are necessary!", "error");
 		
 	}else{
-		var url="http://52.74.167.202:8080/svcProject/product/addListing";
+		var url="http://52.74.213.47:8080/svcProject/product/addListing";
 	
 		var xmlhttp;
 
@@ -104,6 +106,12 @@ console.log(payload);
 	if(xmlhttp.responseText.indexOf("success") > -1){
 		//	alert("Thanks for your response. We'll get back to you over email right away!")
 			 swal("Win", "Details uploaded to the server successfully!", "success");
+		}else if(xmlhttp.responseText.indexOf("DB") > -1){
+			swal("Fail", "Error on server. Contact the site admin for quickresolution.", "error");
+			
+		}else if(xmlhttp.responseText.indexOf("merchant") > -1){
+			swal("Fail", "Wrong merchant name or merchant not registered yet. please contact site admin for quick resolution.", "error");
+			
 		}
   
   //document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
@@ -111,7 +119,7 @@ console.log(payload);
   }
 
   }
- 
+	
   xmlhttp.open("POST",url,true);
  xmlhttp.setRequestHeader("Authorization", "Basic YWRtaW46YWRtaW4=");
 
