@@ -23,6 +23,8 @@ function submit(){
 	var essentials=document.getElementById('essentials').value;
 	var wib=document.getElementById('box').value;
 	var uid=document.getElementById('uid').value;
+		var distance=document.getElementById('distance').value;
+
 	
 	var category=document.getElementById("category").innerHTML;
 	
@@ -52,6 +54,7 @@ function submit(){
 				payload["rental_period_unit"]=rental_period_unit;
 				payload["availability"]=availability;
 				payload["uid"]=uid;
+				payload["distance"]=distance;
 				
 	var fields = $('#specstable tr:has(td)').map(function(i, v) {
     

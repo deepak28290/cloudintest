@@ -254,6 +254,11 @@ function geolocate() {
       <input type="text" class="form-control" id="merchant" placeholder="Zip Cars">
       
     </div><br/><br/>
+		<div class="input-group">
+      <div class="input-group-addon">Delivery Radius(in Kms, Leave blank for pickup only)</div>
+      <input type="text" class="form-control" id="distance" placeholder="5 or 0 if delivery everywhere">
+      
+    </div><br/><br/>
               <div class="input-group">    <button class="btn btn-success" id="upload_widget_opener">Upload image</button><br/>
 			  <div id="imgurl" style="display:block">
 	
@@ -379,7 +384,7 @@ function geolocate() {
     cloudinary.openUploadWidget({ cloud_name: 'mesh', upload_preset: 'bjqltbqn'}, 
       function(error, result) { console.log(error, result);
 			
-			document.getElementById("imgurl").innerHTML="Image URL: "+result[0].url;
+			document.getElementById("imgurl").innerHTML=""+result[0].url;
 			
 	  });
 
