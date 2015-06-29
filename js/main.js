@@ -80,7 +80,7 @@ console.log(payload);
 	    swal("Oops...", "All fields are necessary!", "error");
 		
 	}else{
-		var url="http://52.74.213.47:8080/svcProject/product/addListing";
+		var url="http://ec2-52-74-190-177.ap-southeast-1.compute.amazonaws.com:8080/svcProject/product/addListing";
 	
 		var xmlhttp;
 
