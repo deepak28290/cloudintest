@@ -23,8 +23,9 @@ function submit(){
 	var essentials=document.getElementById('essentials').value;
 	var wib=document.getElementById('box').value;
 	var uid=document.getElementById('uid').value;
-		var distance=document.getElementById('distance').value;
-
+	var distance=document.getElementById('distance').value;
+	var contact=document.getElementById('contact').value;
+	
 	
 	var category=document.getElementById("category").innerHTML;
 	
@@ -55,6 +56,7 @@ function submit(){
 				payload["availability"]=availability;
 				payload["uid"]=uid;
 				payload["distance"]=distance;
+				payload["merchant_phone"]=contact;
 				
 	var fields = $('#specstable tr:has(td)').map(function(i, v) {
     
@@ -75,7 +77,7 @@ for(var i=0; i < fields.length; i++) {
 var specs=jsonData;
 				payload["specs"]=specs;
 console.log(payload);
-	if(description==""||title==""||rental_period_unit==""||category==""||price1==""||price2==""||price3==""||security==""||merchant==""||coordinates==""||address==""||city==""||pin==""||country==""||state==""||essentials==""||wib==""||uid==""){
+	if(description==""||title==""||rental_period_unit==""||category==""||price1==""||price2==""||price3==""||security==""||merchant==""||coordinates==""||address==""||city==""||pin==""||country==""||state==""||essentials==""||wib==""||uid==""||contact==""){
 	  
 	    swal("Oops...", "All fields are necessary!", "error");
 		
